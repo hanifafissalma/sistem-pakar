@@ -6,13 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="SISTEM PAKAR DIAGNOSA PENYAKIT SAYUR ORGANIK | www.hakkoblogs.com">
     <link rel="icon" href="">
-
-    <title>SISTEM PAKAR DIAGNOSA PENYAKIT SAYUR ORGANIK | www.hakkoblogs.com</title>
-
-    <!-- Bootstrap core CSS -->
+    <title>SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="css/justified-nav.css" rel="stylesheet">
   </head>
 
