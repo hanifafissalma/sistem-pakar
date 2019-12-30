@@ -92,7 +92,7 @@
                 } else {echo "";}
                  ?>
                  </td>
-            <td><a href="cetak-hasil.php?cek=<?php echo $row['jika']; ?>" class="btn btn-sm btn-primary" target="_blank">Download</a></td>
+            <td></td>
             </tr>
             <tr>
             <td>Penyakit</td>

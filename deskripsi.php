@@ -44,7 +44,7 @@
             <td>Penyakit</td>
             <td>:</td>
             <td><?php echo $row['nama_penyakit']; ?></td>
-            <td><a href="cetak-deskripsi.php?id=<?php echo $row['kode']; ?>" class="btn btn-sm btn-primary" target="_blank">Download</a></td>
+            <td></td>
             
             </tr>
             <tr>
