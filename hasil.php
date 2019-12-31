@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="SISTEM PAKAR DIAGNOSA PENYAKIT SAYUR ORGANIK | www.hakkoblogs.com">
+    <meta name="author" content="SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL">
     <link rel="icon" href="">
     <title>SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">

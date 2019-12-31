@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="description" content="SISTEM PAKAR DIAGNOSA PENYAKIT SAYUR ORGANIK | www.hakkoblogs.com">
+  <meta name="description" content="SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL">
   <meta name="author" content="Hakko Bio Richard">
   <meta name="keyword" content="SISTEM PAKAR, DIAGNOSA, MOBIL">
   <meta name="viewport" content="width=device-width, initial-scale=1">

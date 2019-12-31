@@ -12,10 +12,7 @@
           <a class="nav-link" href="daftar.php">Daftar Penyakit</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akun</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="login.php">Login Admin</a>
-          </div>
+          <a class="nav-link" href="login.php">Login Admin</a>
         </li>
       </ul>
     </div>
