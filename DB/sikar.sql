@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2019 at 10:39 AM
+-- Generation Time: Dec 31, 2019 at 11:49 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -107,7 +107,6 @@ CREATE TABLE `solusi` (
   `id` int(10) NOT NULL,
   `kd_solusi` varchar(10) NOT NULL,
   `kd_pencegahan` varchar(10) NOT NULL,
-  `nama_obat` text NOT NULL,
   `solusi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -115,8 +114,8 @@ CREATE TABLE `solusi` (
 -- Dumping data for table `solusi`
 --
 
-INSERT INTO `solusi` (`id`, `kd_solusi`, `kd_pencegahan`, `nama_obat`, `solusi`) VALUES
-(1, 'S01', 'PP01', 'lalala yeyeye', 'lalala yeyeye');
+INSERT INTO `solusi` (`id`, `kd_solusi`, `kd_pencegahan`, `solusi`) VALUES
+(1, 'S01', 'PP01', 'lalala yeyeye');
 
 -- --------------------------------------------------------
 
@@ -187,7 +186,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `solusi`
 --
 ALTER TABLE `solusi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -8,20 +8,20 @@
     <link rel="icon" href="">
     <title>SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <?php include "header.php"; ?>
-      <main role="main">
+    <?php include "header.php"; ?>
+    <section>
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2>Daftar Penyakit Tanaman Sayur Organik</h2>
+            <h2 class="title">DAFTAR KERUSAKAN PADA MOBIL</h2>
             <table class="table table-bordered table-hover">
 		          <tr>
                 <th><center>NO</center></th>
                 <th><center>KODE </center></th>
-                <th><center>NAMA PENYAKIT</center></th>
+                <th><center>NAMA KERUSAKAN</center></th>
                 <th><center>PENYEBAB</center></th>
                 <th><center>DESKRIPSI</center></th>
 		          </tr>
@@ -37,17 +37,14 @@
                 <td><?php echo $data['kode']; ?></td>
                 <td><?php echo $data['nama_penyakit']; ?></td>
                 <td><?php echo $data['penyebab']; ?></td>
-                <td><a href="deskripsi.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-primary">Detail</a></td>
+                <td><a href="deskripsi.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-primary-sikar">Rincian</a></td>
               </tr>
             <?php } ?>
             </table>
           </div>
         </div>
-      </main>
-      <footer class="footer">
-        <p>Copyright &copy; 2019</p>
-      </footer>
-    </div>
+      </div>
+    </section>
     <script src="js/popper.min.js"></script>
     <script src="js/jquery-slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

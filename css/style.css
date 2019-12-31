@@ -1,0 +1,56 @@
+.container{
+    position: relative;
+    overflow: hidden;
+}
+.masthead{
+    background:#1c2b39;
+}
+.title{
+    color:#dd3751;
+    margin-bottom:30px;
+}
+.navbar-light .navbar-brand,.navbar-light .navbar-brand:hover {
+    color: white;
+    font-weight:700;
+    font-size: 2rem;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color:#cdd3d8;
+}
+.masthead .navbar-light .navbar-nav > li > a:hover{
+    color:#dd3751;
+}
+.masthead .navbar-light .navbar-nav > li > a {
+    font-size: 14px;
+    line-height: 22px;
+    display: block;
+    color: #cdd3d8;
+    padding: 14px 0 17px 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0 20px;
+    border-top: 3px solid transparent;
+}
+section{
+    padding:30px 0;
+}
+.tj-banner-form {
+    width: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../images/3.jpg) no-repeat;
+    background-size: cover;
+    padding: 195px 0;
+    position: relative;
+    display:block;
+    color:white;
+    height:100vh;
+}
+.btn-primary-sikar,.btn-primary-sikar:hover,.btn-primary-sikar.active,.btn-primary-sikar:visited{
+    background:#dd3751;
+    border-color:#dd3751;
+    color:white;
+}
+.btn-big{
+    margin: 0 auto 0;
+    text-align: center;
+    padding: 15px 10px;
+}

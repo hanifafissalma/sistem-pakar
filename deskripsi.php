@@ -9,15 +9,15 @@
     <link rel="icon" href="">
     <title>SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-      <?php include "header.php"; ?>
-      <main role="main">
+    <?php include "header.php"; ?>
+    <section>
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2>Penjelasan Detail</h2>
+            <h2 class="title">PENJELASAN</h2>
             <?php     
               $id = $_GET['id'];
               $sql = mysqli_query($koneksi, "SELECT pencegahan.*, penyakit.*, solusi.*, rule.* 
@@ -95,11 +95,6 @@
                 <td colspan="2"><?php echo $row['deskripsi']; ?></td>
               </tr>
               <tr>
-                <td>Nama Obat</td>
-                <td>:</td>
-                <td colspan="2"><?php echo $row['nama_obat']; ?></td>
-              </tr>
-              <tr>
                 <td>Solusi</td>
                 <td>:</td>
                 <td colspan="2">
@@ -121,12 +116,8 @@
             <a class="btn btn-sm btn-danger" href="daftar.php">Kembali</a>
           </div>
         </div>
-        <br /><br />
-      </main>
-      <footer class="footer">
-        <p>Copyright &copy; 2017 <a href="http://www.hakkoblogs.com">www.hakkoblogs.com</a></p>
-      </footer>
-    </div>
+      </div>
+    </section>
     <script src="js/popper.min.js"></script>
     <script src="js/jquery-slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
