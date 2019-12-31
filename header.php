@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav text-md-center">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="index.php">Halaman Utama</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="daftar.php">Daftar Kerusakan</a>

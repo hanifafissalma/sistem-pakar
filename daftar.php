@@ -21,7 +21,7 @@
 		          <tr>
                 <th><center>NO</center></th>
                 <th><center>KODE </center></th>
-                <th><center>NAMA KERUSAKAN</center></th>
+                <th><center>JENIS KERUSAKAN</center></th>
                 <th><center>PENYEBAB</center></th>
                 <th><center>DESKRIPSI</center></th>
 		          </tr>

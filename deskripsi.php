@@ -35,7 +35,7 @@
             ?>  
             <table class="table table-bordered table-hover">
               <tr>
-                <td>Penyakit</td>
+                <td>Jenis Kerusakan</td>
                 <td>:</td>
                 <td><?php echo $row['nama_penyakit']; ?></td>
                 <td></td>
