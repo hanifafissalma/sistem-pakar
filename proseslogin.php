@@ -42,6 +42,6 @@ if (mysqli_num_rows($q) == 1) {
     } **/
 	
 } else {
-	header('location:login.php?error=Anda belum terdaftar');
+	header('location:login.php?error=Username atau password Anda salah');
 }
 ?>

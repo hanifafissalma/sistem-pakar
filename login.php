@@ -7,12 +7,7 @@
     <meta name="keyword" content="SISTEM PAKAR, DIAGNOSA, MOBIL">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
-    <link rel="stylesheet" type="text/css" href="admin/asset/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="admin/asset/css/plugins/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="admin/css/plugins/simple-line-icons.css"/>
-    <link rel="stylesheet" type="text/css" href="admin/asset/css/plugins/animate.min.css"/>
-    <link rel="stylesheet" type="text/css" href="admin/asset/css/plugins/icheck/skins/flat/aero.css"/>
-    <link href="admin/asset/css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -20,7 +15,15 @@
     <section>
       <div class="container">
         <form class="form-signin" action="proseslogin.php" method="POST">
-          
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-lg btn-danger">Login</button>
         </form>
       </div>
     </section>
