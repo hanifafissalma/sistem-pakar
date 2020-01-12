@@ -70,7 +70,7 @@
     </section>
     <script src="../js/popper.min.js"></script>
     <script src="../js/jquery-slim.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>\
+    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {

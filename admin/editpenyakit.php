@@ -15,7 +15,7 @@
     <?php include "header.php"; ?>
     <section>
         <div class="container">
-            <a class="btn btn-md btn-info" href="gejala.php">Kembali</a>
+            <a class="btn btn-md btn-info" href="penyakit.php">Kembali</a>
             <div class="card" style="padding:20px;margin-top:30px">
                 <h3>UBAH GEJALA</h3>
                 <hr/>

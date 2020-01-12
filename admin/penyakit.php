@@ -9,6 +9,7 @@
     <title>ADMIN SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/jquery.dataTables.min.css" rel="stylesheet"/>
   </head>
   <body>
     <?php include "header.php"; ?>
@@ -80,5 +81,11 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/jquery-slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#gejala').DataTable();
+        } );
+    </script>
   </body>
 </html>

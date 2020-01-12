@@ -21,24 +21,23 @@
             <?php     
               $id = $_GET['id'];
               $sql = mysqli_query($koneksi, "SELECT pencegahan.*, penyakit.*, solusi.*, rule.* 
-                                            FROM pencegahan, penyakit, solusi, rule  
-                                            WHERE penyakit.kode=rule.maka AND
-                                            penyakit.kode=pencegahan.kode AND
-                                            solusi.kd_pencegahan=pencegahan.kd_pencegahan AND
-                                            penyakit.kode='$id'");
-                  if(mysqli_num_rows($sql) == 0){
-                    header("Location: daftar.php");
-                  }else{
-                    $row = mysqli_fetch_array($sql);
-                  }
+                                FROM pencegahan, penyakit, solusi, rule  
+                                WHERE penyakit.kode=rule.maka AND
+                                penyakit.kode=pencegahan.kode AND
+                                solusi.kd_pencegahan=pencegahan.kd_pencegahan AND
+                                penyakit.kode='$id'");
+              if(mysqli_num_rows($sql) == 0){
+                header("Location: daftar.php");
+              }else{
+                $row = mysqli_fetch_array($sql);
+              }
             
             ?>  
             <table class="table table-bordered table-hover">
               <tr>
                 <td>Jenis Kerusakan</td>
                 <td>:</td>
-                <td><?php echo $row['nama_penyakit']; ?></td>
-                <td></td>
+                <td colspan="2"><?php echo $row['nama_penyakit']; ?></td>
               </tr>
               <tr>
                 <td>Penyebab</td>
