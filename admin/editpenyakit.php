@@ -21,18 +21,22 @@
                 <hr/>
                 <?php
                     include '../conn.php';
-                    $kd_gejala = $_GET['id'];
-                    $data = mysqli_query($koneksi,"select * from gejala where kd_gejala='$kd_gejala'");
+                    $kode = $_GET['id'];
+                    $data = mysqli_query($koneksi,"select * from penyakit where kode='$kode'");
                     while($d = mysqli_fetch_array($data)){
                 ?>
-                <form action="updategejala.php" method="POST">
+                <form action="updatepenyakit.php" method="POST">
                     <div class="form-group">
-                        <label>Kode Gejala</label>
-                        <input type="text" name="kd_gejala" class="form-control" value="<?php echo $d['kd_gejala']; ?>" disabled />
+                        <label>Kode</label>
+                        <input type="text" name="kode" class="form-control" value="<?php echo $d['kode']; ?>" disabled />
                     </div>
                     <div class="form-group">
                         <label>Nama Gejala</label>
-                        <input type="text" name="gejala" class="form-control" value="<?php echo $d['gejala']; ?>" />
+                        <input type="text" name="nama_penyakit" class="form-control" value="<?php echo $d['nama_penyakit']; ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label>Penyebab</label>
+                        <input type="text" name="penyebab" class="form-control" value="<?php echo $d['penyebab']; ?>" />
                     </div>
                     <button type="submit" class="btn btn-md btn-danger">Ubah</button>
                 </form>

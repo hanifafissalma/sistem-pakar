@@ -11,13 +11,13 @@
             <a class="nav-link" href="index.php">Halaman Utama</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gejala.php">Daftar Gejala</a>
+            <a class="nav-link" href="gejala.php">Gejala</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="penyakit.php">Daftar Penyakit</a>
+            <a class="nav-link" href="penyakit.php">Penyakit</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" href="rule.php">Daftar Rule</a>
+            <a class="nav-link" href="rule.php">Rule</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="pencegahan.php">Pencegahan</a>
