@@ -33,6 +33,10 @@
                       <label>Penyebab</label>
                       <input type="text" name="penyebab" class="form-control" />
                   </div>
+                  <div class="form-group">
+                      <label>Bobot</label>
+                      <input type="number" step="0.01" name="bobot" class="form-control" />
+                  </div>
                   <button type="submit" class="btn btn-md btn-danger">Tambah</button>
                 </form>
               </div>
@@ -48,6 +52,7 @@
                         <th width="100"><center>KODE</center></th>
                         <th><center>NAMA PENYAKIT</center></th>
                         <th><center>PENYEBAB</center></th>
+                        <th><center>BOBOT</center></th>
                         <th><center>AKSI</center></th>
                       </tr>
                     </thead> 
@@ -65,6 +70,7 @@
                           <td><?php echo $data['kode']; ?></td>
                           <td><?php echo $data['nama_penyakit']; ?></td>
                           <td><?php echo $data['penyebab']; ?></td>
+                          <td><?php echo $data['bobot']; ?></td>
                           <td>
                               <a  href="editpenyakit.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-warning">UBAH</a>
                           </td>

@@ -11,6 +11,6 @@ $solusi = $_POST['solusi'];
 mysqli_query($koneksi,"update solusi set kd_pencegahan='$kd_pencegahan', kd_solusi='$ks_solusi', solusi='$solusi' where id='$id'");
  
 // mengalihkan halaman kembali ke index.php
-header("location:pencegahan.php");
+header("location:solusi.php");
  
 ?>

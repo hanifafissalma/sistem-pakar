@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2019 at 11:49 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jan 14, 2020 at 04:58 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE `gejala` (
 
 INSERT INTO `gejala` (`kd_gejala`, `gejala`) VALUES
 ('G01', 'mogok'),
-('G02', 'susah nyala');
+('G02', 'susah nyala nyala');
 
 -- --------------------------------------------------------
 
@@ -58,7 +58,7 @@ CREATE TABLE `pencegahan` (
 --
 
 INSERT INTO `pencegahan` (`kd_pencegahan`, `kode`, `deskripsi`) VALUES
-('PP01', 'P01', 'lalala yeyeye');
+('PP01', 'P01', 'contoh pencegahan');
 
 -- --------------------------------------------------------
 
@@ -69,15 +69,16 @@ INSERT INTO `pencegahan` (`kd_pencegahan`, `kode`, `deskripsi`) VALUES
 CREATE TABLE `penyakit` (
   `kode` varchar(10) NOT NULL,
   `nama_penyakit` varchar(50) NOT NULL,
-  `penyebab` varchar(200) NOT NULL
+  `penyebab` varchar(200) NOT NULL,
+  `bobot` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `penyakit`
 --
 
-INSERT INTO `penyakit` (`kode`, `nama_penyakit`, `penyebab`) VALUES
-('P01', 'Oli Habis', 'mogok dan susah nyala');
+INSERT INTO `penyakit` (`kode`, `nama_penyakit`, `penyebab`, `bobot`) VALUES
+('P01', 'Oli Habis', 'mogok dan susah nyala', 0.5);
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,7 @@ CREATE TABLE `solusi` (
 --
 
 INSERT INTO `solusi` (`id`, `kd_solusi`, `kd_pencegahan`, `solusi`) VALUES
-(1, 'S01', 'PP01', 'lalala yeyeye');
+(1, '', 'PP01', 'contoh solusi');
 
 -- --------------------------------------------------------
 
@@ -136,7 +137,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `fullname`, `level`) VALUES
-(3, 'hani', 'hani', 'Hani', '-- Pilih L');
+(3, 'admin', 'admin', 'Admin', '-- Pilih L');
 
 --
 -- Indexes for dumped tables

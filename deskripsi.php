@@ -40,6 +40,11 @@
                 <td colspan="2"><?php echo $row['nama_penyakit']; ?></td>
               </tr>
               <tr>
+                <td>Bobot</td>
+                <td>:</td>
+                <td colspan="2"><?php echo $row['bobot']; ?></td>
+              </tr>
+              <tr>
                 <td>Penyebab</td>
                 <td>:</td>
                 <td colspan="2"><?php echo $row['penyebab']; ?></td>

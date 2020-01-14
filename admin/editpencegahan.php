@@ -28,7 +28,9 @@
                 <form action="updatepencegahan.php" method="POST">
                     <div class="form-group">
                         <label>Kode Pencegahan</label>
-                        <input type="text" name="kd_pencegahan" value="<?php echo $d['kd_pencegahan']; ?>" class="form-control" />
+                        <br/>
+                        <b><?php echo $d['kd_pencegahan']?></b>
+                        <input type="hidden" name="kd_pencegahan" value="<?php echo $d['kd_pencegahan']; ?>" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Daftar Penyakit</label>

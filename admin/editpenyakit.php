@@ -17,7 +17,7 @@
         <div class="container">
             <a class="btn btn-md btn-info" href="penyakit.php">Kembali</a>
             <div class="card" style="padding:20px;margin-top:30px">
-                <h3>UBAH GEJALA</h3>
+                <h3>UBAH PENYAKIT</h3>
                 <hr/>
                 <?php
                     include '../conn.php';
@@ -28,7 +28,9 @@
                 <form action="updatepenyakit.php" method="POST">
                     <div class="form-group">
                         <label>Kode</label>
-                        <input type="text" name="kode" class="form-control" value="<?php echo $d['kode']; ?>" disabled />
+                        <br/>
+                        <b><?php echo $d['kode']?></b>
+                        <input type="hidden" name="kode" class="form-control" value="<?php echo $d['kode']; ?>" />
                     </div>
                     <div class="form-group">
                         <label>Nama Gejala</label>
@@ -37,6 +39,10 @@
                     <div class="form-group">
                         <label>Penyebab</label>
                         <input type="text" name="penyebab" class="form-control" value="<?php echo $d['penyebab']; ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label>Bobot</label>
+                        <input type="number" step="0.01" name="bobot" class="form-control" value="<?php echo $d['bobot']; ?>" />
                     </div>
                     <button type="submit" class="btn btn-md btn-danger">Ubah</button>
                 </form>

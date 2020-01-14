@@ -22,14 +22,16 @@
                 <?php
                     include '../conn.php';
                     $id = $_GET['id'];
-                    $data = mysqli_query($koneksi,"select * from solusi where id='$id'");
+                    $data = mysqli_query($koneksi,"SELECT * from solusi WHERE id='$id'");
                     while($d = mysqli_fetch_array($data)){
                 ?>
                 <form action="updatesolusi.php" method="POST">
                     <input type="hidden" value="<?php echo $d['id']?>" name="id"/>
                     <div class="form-group">
                         <label>Kode Solusi</label>
-                        <input type="text" name="kd_solusi" value="<?php echo $d['kd_solusi']; ?>" class="form-control" disabled/>
+                        <br/>
+                        <b><?php echo $d['kd_solusi']?></b>
+                        <input type="hidden" name="kd_solusi" value="<?php echo $d['kd_solusi']; ?>" class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label>Pencegahan</label>

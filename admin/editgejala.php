@@ -28,7 +28,9 @@
                 <form action="updategejala.php" method="POST">
                     <div class="form-group">
                         <label>Kode Gejala</label>
-                        <input type="text" name="kd_gejala" class="form-control" value="<?php echo $d['kd_gejala']; ?>" disabled />
+                        <br/>
+                        <b><?php echo $d['kd_gejala']?></b>
+                        <input type="hidden" name="kd_gejala" class="form-control" value="<?php echo $d['kd_gejala']; ?>" />
                     </div>
                     <div class="form-group">
                         <label>Nama Gejala</label>
