@@ -21,14 +21,67 @@
             <?php  
               if(isset($_POST['proses'])){    
                 $a = $_POST['cek'];
+                $rumus = 0;
+                //a[0]
+                if(isset($a[0])){
+                  $sql1 = mysqli_query($koneksi, "SELECT * FROM  pakar WHERE kd_gejala='$a[0]'");
+                  $row1 = mysqli_fetch_array($sql1);
+                  $rumus += $row1['bobot'];
+                } else {
+                  echo "";
+                }
+                //a[1]
+                if(isset($a[1])){
+                  $sql2 = mysqli_query($koneksi, "SELECT * FROM  pakar WHERE kd_gejala='$a[1]'");
+                  $row2 = mysqli_fetch_array($sql2);
+                  $rumus += $row2['bobot'];
+                } else {
+                  echo "";
+                }
+                //a[2]
+                if(isset($a[2])){
+                  $sql3 = mysqli_query($koneksi, "SELECT * FROM  pakar WHERE kd_gejala='$a[2]'");
+                  $row3 = mysqli_fetch_array($sql3);
+                  $rumus += $row3['bobot'];
+                } else {
+                  echo "";
+                }
+                //a[3]
+                if(isset($a[3])){
+                  $sql4 = mysqli_query($koneksi, "SELECT * FROM  pakar WHERE kd_gejala='$a[3]'");
+                  $row4 = mysqli_fetch_array($sql4);
+                  $rumus += $row4['bobot'];
+                } else {
+                  echo "";
+                }
+                //a[4]
+                if(isset($a[4])){
+                  $sql5 = mysqli_query($koneksi, "SELECT * FROM  pakar WHERE kd_gejala='$a[4]'");
+                  $row5 = mysqli_fetch_array($sql5);
+                  $rumus += $row5['bobot'];
+                } else {
+                  echo "";
+                }
+                //a[5]
+                if(isset($a[5])){
+                  $sql6 = mysqli_query($koneksi, "SELECT * FROM  pakar WHERE kd_gejala='$a[5]'");
+                  $row6 = mysqli_fetch_array($sql6);
+                  $rumus += $row6['bobot'];
+                } else {
+                  echo "";
+                }
+                $sql7 = mysqli_query($koneksi, "SELECT * FROM  penyakit");
+                $row7 = mysqli_fetch_array($sql7);
+                echo $row7['bobot'];
+
                 $aa = implode('AND',$a);
                 //echo $aa;
-                $sql = mysqli_query($koneksi, "SELECT pencegahan.*, penyakit.*, solusi.*, rule.* 
-                                FROM pencegahan, penyakit, solusi, rule  
-                                WHERE rule.maka=penyakit.kode AND
+                $sql = mysqli_query($koneksi, "SELECT pencegahan.*, penyakit.*, solusi.* 
+                                FROM pencegahan, penyakit, solusi  
+                                WHERE 
                                 pencegahan.kode=penyakit.kode AND
                                 solusi.kd_pencegahan=pencegahan.kd_pencegahan AND
-                                rule.jika='$aa'");
+                                penyakit.bobot <=> '$rumus'");
                 if(mysqli_num_rows($sql) == 0){
                   header('location:diagnosa.php?error=Tidak ditemukan kerusakan dengan gejala tersebut, silahkan cek <a href="daftar.php">daftar kerusakan mobil</a>');		
                 }else{

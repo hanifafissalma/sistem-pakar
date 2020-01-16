@@ -16,8 +16,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link" href="penyakit.php">Penyakit</a>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link" href="rule.php">Rule</a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="pakar.php">Pakar</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="pencegahan.php">Pencegahan</a>
