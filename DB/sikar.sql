@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2020 at 01:32 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 5.6.33
+-- Generation Time: Jan 20, 2020 at 07:01 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,6 +44,35 @@ INSERT INTO `gejala` (`kd_gejala`, `gejala`) VALUES
 ('G04', 'Pengisian kurang'),
 ('G05', 'Mesin pincang'),
 ('G06', 'Brebet');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `log`
+--
+
+CREATE TABLE `log` (
+  `id` int(11) NOT NULL,
+  `nama_penyakit` varchar(100) NOT NULL,
+  `bobot` float NOT NULL,
+  `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`id`, `nama_penyakit`, `bobot`, `waktu`) VALUES
+(2, 'Kurang pengisian', 0.15, '2020-01-19 23:55:36'),
+(3, 'Kurang pengisian', 0.15, '2020-01-19 23:58:04'),
+(4, 'Kurang pengisian', 0.25, '2020-01-19 23:58:04'),
+(5, 'Mesin pincang', 0.1, '2020-01-19 23:58:04'),
+(6, '', 0, '2020-01-19 23:58:04'),
+(7, '', 0, '2020-01-19 23:58:04'),
+(8, '', 0, '2020-01-19 23:58:04'),
+(9, 'Kopling Rusak', 0.225, '2020-01-20 00:00:50'),
+(10, 'Kurang pengisian', 0.25, '2020-01-20 00:00:50'),
+(11, 'Mesin pincang', 0.3, '2020-01-20 00:00:50');
 
 -- --------------------------------------------------------
 
@@ -215,6 +244,12 @@ ALTER TABLE `gejala`
   ADD PRIMARY KEY (`kd_gejala`);
 
 --
+-- Indexes for table `log`
+--
+ALTER TABLE `log`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pakar`
 --
 ALTER TABLE `pakar`
@@ -247,6 +282,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `log`
+--
+ALTER TABLE `log`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pakar`
