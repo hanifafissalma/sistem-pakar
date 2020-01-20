@@ -19,6 +19,7 @@
           <div class="col-lg-12">
             <h2 class="title">Hasil Diagnosa</h2>
             <?php  
+              include 'conn.php';
               if(isset($_POST['proses'])){    
                 $a = $_POST['cek'];
                 
@@ -36,6 +37,13 @@
                 }else{
                   $row_1 = mysqli_fetch_array($sql_1);
                 }
+                
+                // menangkap data yang di kirim dari form
+                $kode = $row_1['nama_penyakit'];
+                $bobot = $row_1['bobot'];
+                $waktu = date("Y-m-d H:i:s");
+                mysqli_query($koneksi,"insert into log values('','$kode','$bobot','$waktu')");
+                
                 //2
                 if(isset($a[1])){
                   $sql_2 = mysqli_query($koneksi, "SELECT pencegahan.*, penyakit.*, solusi.* , pakar.*, gejala.*
@@ -51,7 +59,13 @@
                   }else{
                     $row_2 = mysqli_fetch_array($sql_2);
                   }
+
+                  $kode = $row_2['nama_penyakit'];
+                  $bobot = $row_2['bobot'];
+                  $waktu = date("Y-m-d H:i:s");
+                  mysqli_query($koneksi,"insert into log values('','$kode','$bobot','$waktu')");
                 }
+                
                 
                 //3
                 if(isset($a[2])){
@@ -68,6 +82,11 @@
                   }else{
                     $row_3 = mysqli_fetch_array($sql_3);
                   }
+
+                  $kode = $row_3['nama_penyakit'];
+                  $bobot = $row_3['bobot'];
+                  $waktu = date("Y-m-d H:i:s");
+                  mysqli_query($koneksi,"insert into log values('','$kode','$bobot','$waktu')");
                 }
 
                 //4
@@ -85,6 +104,11 @@
                   }else{
                     $row_4 = mysqli_fetch_array($sql_4);
                   }
+
+                  $kode = $row_4['nama_penyakit'];
+                  $bobot = $row_4['bobot'];
+                  $waktu = date("Y-m-d H:i:s");
+                  mysqli_query($koneksi,"insert into log values('','$kode','$bobot','$waktu')");
                 }
 
                 //5
@@ -102,9 +126,13 @@
                   }else{
                     $row_5 = mysqli_fetch_array($sql_5);
                   }
-                }
-                
 
+                  $kode = $row_5['nama_penyakit'];
+                  $bobot = $row_5['bobot'];
+                  $waktu = date("Y-m-d H:i:s");
+                  mysqli_query($koneksi,"insert into log values('','$kode','$bobot','$waktu')");
+                }
+              
                 //6
                 if(isset($a[5])){
                   $sql_6 = mysqli_query($koneksi, "SELECT pencegahan.*, penyakit.*, solusi.* , pakar.*, gejala.*
@@ -120,6 +148,11 @@
                   }else{
                     $row_6 = mysqli_fetch_array($sql_6);
                   }
+
+                  $kode = $row_6['nama_penyakit'];
+                  $bobot = $row_6['bobot'];
+                  $waktu = date("Y-m-d H:i:s");
+                  mysqli_query($koneksi,"insert into log values('','$kode','$bobot','$waktu')");
                 }
               }  
             ?>  
