@@ -229,6 +229,11 @@
                 <td colspan="2"><?php echo $row_1['nama_penyakit']; ?></td>
               </tr>
               <tr>
+                <td>Bobot</td>
+                <td>:</td>
+                <td colspan="2"><?php echo $row_1['bobot']; ?></td>
+              </tr>
+              <tr>
                 <td>Penyebab</td>
                 <td>:</td>
                 <td colspan="2"><?php echo $row_1['penyebab']; ?></td>
@@ -266,6 +271,11 @@
                   <td>Jenis Kerusakan</td>
                   <td>:</td>
                   <td colspan="2"><?php echo $row_2['nama_penyakit']; ?></td>
+                </tr>
+                <tr>
+                  <td>Bobot</td>
+                  <td>:</td>
+                  <td colspan="2"><?php echo $row_2['bobot']; ?></td>
                 </tr>
                 <tr>
                   <td>Penyebab</td>
@@ -310,6 +320,11 @@
                   <td colspan="2"><?php echo $row_3['nama_penyakit']; ?></td>
                 </tr>
                 <tr>
+                  <td>Bobot</td>
+                  <td>:</td>
+                  <td colspan="2"><?php echo $row_3['bobot']; ?></td>
+                </tr>
+                <tr>
                   <td>Penyebab</td>
                   <td>:</td>
                   <td colspan="2"><?php echo $row_3['penyebab']; ?></td>
@@ -350,6 +365,11 @@
                   <td>Jenis Kerusakan</td>
                   <td>:</td>
                   <td colspan="2"><?php echo $row_4['nama_penyakit']; ?></td>
+                </tr>
+                <tr>
+                  <td>Bobot</td>
+                  <td>:</td>
+                  <td colspan="2"><?php echo $row_4['bobot']; ?></td>
                 </tr>
                 <tr>
                   <td>Penyebab</td>
@@ -394,6 +414,11 @@
                   <td colspan="2"><?php echo $row_5['nama_penyakit']; ?></td>
                 </tr>
                 <tr>
+                  <td>Bobot</td>
+                  <td>:</td>
+                  <td colspan="2"><?php echo $row_5['bobot']; ?></td>
+                </tr>
+                <tr>
                   <td>Penyebab</td>
                   <td>:</td>
                   <td colspan="2"><?php echo $row_5['penyebab']; ?></td>
@@ -434,6 +459,11 @@
                   <td>Jenis Kerusakan</td>
                   <td>:</td>
                   <td colspan="2"><?php echo $row_6['nama_penyakit']; ?></td>
+                </tr>
+                <tr>
+                  <td>Bobot</td>
+                  <td>:</td>
+                  <td colspan="2"><?php echo $row_6['bobot']; ?></td>
                 </tr>
                 <tr>
                   <td>Penyebab</td>
