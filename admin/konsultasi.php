@@ -17,56 +17,10 @@
       <div class="container">
         <div class="row">
             <div class="col-md-12">
-              <div class="card" style="padding:20px">
-                <h3>TAMBAH KONSULTASI</h3>
-                <hr/>
-                <form action="prosestambahkonsultasi.php" method="POST">
-                    <div class="form-group">
-                        <label>Gejala</label>
-                        <select name="kd_gejala" class="form-control">
-                            <?php 
-                                include "../conn.php";
-                                $query = mysqli_query($koneksi,"SELECT * FROM gejala ORDER BY kd_gejala ASC");
-                                $no=0;
-                                while ($data=mysqli_fetch_array($query)) {
-                                $no++;
-                            ?>  
-                            <option value="<?php echo $data['kd_gejala'];?>"> <?php echo $data['kd_gejala'];?> - <?php echo $data['gejala']; ?></option>
-                            <?php 
-                                }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Penyakit</label>
-                        <select name="kode" class="form-control">
-                            <?php 
-                                include "../conn.php";
-                                $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY kode ASC");
-                                $no=0;
-                                while ($data=mysqli_fetch_array($query)) {
-                                $a = $data['nama_penyakit'];
-                                $no++;
-                            ?>  
-                            <option value="<?php echo $data['kode'];?>"> <?php echo $data['kode'];?> - <?php echo $data['nama_penyakit']; ?></option>
-                            <?php 
-                                }
-                            ?>
-                            </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Nilai Kepercayaan (MB)</label>
-                        <input type="number" step="0.01" name="mb" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label>Nilai Ketidakpercayan (MD)</label>
-                        <input type="number" step="0.01" name="md" class="form-control" />
-                    </div>
-                    <button type="submit" class="btn btn-md btn-danger">Tambah</button>
-                </form>
-              </div>
-              <br/>
-              <h3>Daftar Basis Pengetahuan</h3>
+                <br/>
+              <a class="btn btn-info btn-lg" href="tambahkonsul.php">TAMBAH KONSULTASI</a>
+              <br/><br/>
+              <h3>Daftar Hasil Konsultasi</h3>
               <br/>
               <div class="row">
                 <div class="col-md-12">
@@ -74,29 +28,29 @@
                     <thead>
                       <tr>
                         <th><center>NO</center></th>
-                        <th><center>GEJALA</center></th>
+                        <th><center>NAMA</center></th>
+                        <th><center>TANGGAL</center></th>
                         <th><center>PENYAKIT</center></th>
-                        <th><center>MB</center></th>
-                        <th><center>MD</center></th>
+                        <th><center>CF</center></th>
                         <th><center>AKSI</center></th>
                       </tr>
                     </thead> 
                     <tbody>   
                       <?php 
                         include "../conn.php";
-                        $query = mysqli_query($koneksi,"SELECT * FROM pengetahuan ORDER BY kode_pengetahuan ASC");
+                        $query = mysqli_query($koneksi,"SELECT * FROM konsultasi ORDER BY kode_konsultasi ASC");
                         $no=0;
                         while ($data=mysqli_fetch_array($query)) {
                             $no++;
                       ?>
                       <tr>
                           <td><?php echo $no; ?></td>
-                          <td><?php echo $data['kd_gejala']; ?></td>
-                          <td><?php echo $data['kode']; ?></td>
-                          <td><?php echo $data['mb']; ?></td>
-                          <td><?php echo $data['md']; ?></td>
+                          <td><?php echo $data['nama']; ?></td>
+                          <td><?php echo $data['tanggal']; ?></td>
+                          <td><?php echo $data['penyakit']; ?></td>
+                          <td><?php echo $data['cf']; ?></td>
                           <td>
-                              <a  href="hapuskonsultasi.php?id=<?php echo $data['kode_pengetahuan']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
+                              <a  href="hapuskonsultasi.php?id=<?php echo $data['kode_konsultasi']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
                           </td>
                       </tr>  
                       <?php } ?>
