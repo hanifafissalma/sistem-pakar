@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <header class="masthead">
   <nav class="navbar navbar-expand-md navbar-light rounded">
     <a class="navbar-brand" href="index.php">SIKAR-ADMIN</a>
@@ -12,15 +15,27 @@
         <li class="nav-item dropdown">
           <a class="nav-link" href="penyakit.php">Penyakit</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="pengetahuan.php">Basis Pengetahuan</a>
-        </li>
+        <?php
+          if($_SESSION['level'] == 'admin'){ 
+        ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="pengetahuan.php">Basis Pengetahuan</a>
+          </li>
+        <?php
+          }
+        ?>
         <li class="nav-item dropdown">
           <a class="nav-link" href="konsultasi.php">Daftar Konsultasi</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="pengguna.php">Daftar Pengguna</a>
-        </li>
+        <?php
+          if($_SESSION['level'] == 'admin'){ 
+        ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="pengguna.php">Daftar Pengguna</a>
+          </li>
+        <?php
+          }
+        ?>
         <li class="nav-item dropdown">
           <a class="nav-link" href="ubah.php">Ubah Password</a>
         </li>
