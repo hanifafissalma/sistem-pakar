@@ -59,6 +59,7 @@
                                 <td><?php echo $data['gejala']; ?></td>
                                 <td>
                                     <a  href="editgejala.php?id=<?php echo $data['kd_gejala']; ?>" class="btn btn-sm btn-warning">UBAH</a>
+                                    <a  href="hapusgejala.php?id=<?php echo $data['kd_gejala']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
                                 </td>
                             </tr>  
                         <?php } ?>

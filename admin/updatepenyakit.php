@@ -5,10 +5,10 @@ include '../conn.php';
 // menangkap data yang di kirim dari form
 $kode = $_POST['kode'];
 $nama_penyakit = $_POST['nama_penyakit'];
-$penyebab = $_POST['penyebab'];
-$bobot = $_POST['bobot'];
+$informasi = $_POST['informasi'];
+$saran = $_POST['saran'];
 // update data ke database
-$newsql = "UPDATE penyakit SET nama_penyakit = '$nama_penyakit', penyebab = '$penyebab', bobot = '$bobot'  WHERE kode = '$kode'" ;
+$newsql = "UPDATE penyakit SET nama_penyakit = '$nama_penyakit', informasi = '$informasi', saran = '$saran'  WHERE kode = '$kode'" ;
 
 mysqli_query($koneksi,$newsql);
  

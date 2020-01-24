@@ -27,11 +27,5 @@
         </form>
       </div>
     </section>
-    <script src="admin/asset/js/jquery.min.js"></script>
-    <script src="admin/asset/js/jquery.ui.min.js"></script>
-    <script src="admin/asset/js/bootstrap.min.js"></script>
-    <script src="admin/asset/js/plugins/moment.min.js"></script>
-    <script src="admin/asset/js/plugins/icheck.min.js"></script>
-    <script src="admin/asset/js/main.js"></script>
   </body>
 </html>

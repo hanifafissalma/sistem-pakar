@@ -37,12 +37,12 @@
                         <input type="text" name="nama_penyakit" class="form-control" value="<?php echo $d['nama_penyakit']; ?>" />
                     </div>
                     <div class="form-group">
-                        <label>Penyebab</label>
-                        <input type="text" name="penyebab" class="form-control" value="<?php echo $d['penyebab']; ?>" />
+                        <label>Informasi</label>
+                        <textarea name="informasi" class="form-control"><?php echo $d['informasi']?></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Bobot</label>
-                        <input type="number" step="0.01" name="bobot" class="form-control" value="<?php echo $d['bobot']; ?>" />
+                        <label>Saran</label>
+                        <textarea name="saran" class="form-control"><?php echo $d['saran']?></textarea>
                     </div>
                     <button type="submit" class="btn btn-md btn-danger">Ubah</button>
                 </form>

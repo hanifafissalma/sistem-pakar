@@ -30,12 +30,12 @@
                       <input type="text" name="nama_penyakit" class="form-control" />
                   </div>
                   <div class="form-group">
-                      <label>Penyebab</label>
-                      <input type="text" name="penyebab" class="form-control" />
+                      <label>Informasi</label>
+                      <textarea name="informasi" class="form-control"></textarea>
                   </div>
                   <div class="form-group">
-                      <label>Bobot</label>
-                      <input type="number" step="0.01" name="bobot" class="form-control" />
+                      <label>Saran</label>
+                      <textarea name="saran" class="form-control"></textarea>
                   </div>
                   <button type="submit" class="btn btn-md btn-danger">Tambah</button>
                 </form>
@@ -51,8 +51,8 @@
                         <th width="20"><center>NO</center></th>
                         <th width="100"><center>KODE</center></th>
                         <th><center>NAMA PENYAKIT</center></th>
-                        <th><center>PENYEBAB</center></th>
-                        <th><center>BOBOT</center></th>
+                        <th><center>INFORMASI</center></th>
+                        <th><center>SARAN</center></th>
                         <th><center>AKSI</center></th>
                       </tr>
                     </thead> 
@@ -62,17 +62,17 @@
                         $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY kode ASC");
                         $no=0;
                         while ($data=mysqli_fetch_array($query)) {
-                            // $a = $data['gejala'];
                             $no++;
                       ?>
                       <tr>
                           <td><?php echo $no; ?></td>
                           <td><?php echo $data['kode']; ?></td>
                           <td><?php echo $data['nama_penyakit']; ?></td>
-                          <td><?php echo $data['penyebab']; ?></td>
-                          <td><?php echo $data['bobot']; ?></td>
+                          <td><?php echo $data['informasi']; ?></td>
+                          <td><?php echo $data['saran']; ?></td>
                           <td>
                               <a  href="editpenyakit.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-warning">UBAH</a>
+                              <a  href="hapuspenyakit.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
                           </td>
                       </tr>  
                       <?php } ?>
