@@ -24,6 +24,7 @@
                     <div class="form-group">
                         <label>Gejala</label>
                         <select name="kd_gejala" class="form-control">
+                          <option>-- Pilih Gejala --</option>
                             <?php 
                                 include "../conn.php";
                                 $query = mysqli_query($koneksi,"SELECT * FROM gejala ORDER BY kd_gejala ASC");
@@ -40,6 +41,7 @@
                     <div class="form-group">
                         <label>Penyakit</label>
                         <select name="kode" class="form-control">
+                          <option>-- Pilih Penyakit --</option>
                             <?php 
                                 include "../conn.php";
                                 $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY kode ASC");

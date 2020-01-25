@@ -1,3 +1,10 @@
+<?php
+	// untuk memanggil file
+	include 'Crud.php';
+	// untuk mendeklarasikan class menjadi variabel
+	$crud = new Crud();
+	$arrayName = $crud->readGejala();
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,13 +27,25 @@
               <div class="card" style="padding:20px">
                 <h3>KONSULTASI</h3>
                 <hr/>
-                <form action="hasilkonsultasi.php" method="POST">
+                <form action="hasilkonsul.php" method="POST">
                     <div class="form-group">
-                        <label>Nama</label>
+                        <label>Nama Konsultan</label>
                         <input type="text" name="nama" class="form-control" />
                     </div>
-                    <button type="submit" class="btn btn-md btn-danger">Lihat Hasil</button>
-                </form>
+                    <div class="form-group">
+                      <label>Pilih Gejala</label>
+                      <br/>
+                      <?php
+                        foreach ($arrayName as $r){
+                      ?>
+                        <input id="gejala<?php echo $r['kd_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['kd_gejala']; ?>">
+                        <?php echo $r['gejala']; ?><br/>
+                      <?php
+                        }
+                      ?>
+                      <br/>
+					            <input type="submit" name="button" class="btn btn-md btn-danger" value="Proses">
+                  </form>
               </div>
             </div>
         </div>

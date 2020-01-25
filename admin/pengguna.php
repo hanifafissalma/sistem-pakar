@@ -36,6 +36,7 @@
                   <div class="form-group">
                       <label>Level User</label>
                       <select name="level" class="form-control">
+                          <option>--Pilih Level Pengguna--</option>
                           <option value="admin">Admin</option>
                           <option value="konsultan">Konsultan</option>
                       </select>

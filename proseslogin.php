@@ -8,13 +8,13 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 if (empty($username) && empty($password)) {
-	header('location:login.php?error=Username dan Password Kosong');
+	header('location:index.php?error=Username dan Password Kosong');
 	
 } else if (empty($username)) {
-	header('location:login.php?error=Username Kosong');
+	header('location:index.php?error=Username Kosong');
 	
 } else if (empty($password)) {
-	header('location:login.php?error=Password Kosong');
+	header('location:index.php?error=Password Kosong');
 	
 }
 
@@ -30,6 +30,6 @@ if (mysqli_num_rows($q) == 1) {
     header('location:admin/index.php');
 	
 } else {
-	header('location:login.php?error=Username atau password Anda salah');
+	header('location:index.php?error=Username atau password Anda salah');
 }
 ?>
