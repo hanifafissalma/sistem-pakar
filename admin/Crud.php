@@ -86,7 +86,7 @@
       if (isset($result)) {
         // merubah data tabel menjadi array
         $row = [];
-        while (mysqli_fetch_assoc($result)) {
+        while ($row = $result->fetch_assoc()) {
           $rows[] = $row;
         }
 
@@ -113,7 +113,7 @@
       if (isset($result)) {
         // merubah data tabel menjadi array
         $row = [];
-        while (mysqli_fetch_assoc($result)) {
+        while ($row = $result->fetch_assoc()) {
           $rows[] = $row;
         }
 
@@ -156,7 +156,7 @@
         echo "<br/>======================================<br/>";
       }
     }
-
+    
     public function hasilAkhir($daftar_cf,$groupKemungkinanPenyakit)
     {
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
@@ -170,7 +170,7 @@
         $hasilMax = max($merubahIndexCF);
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
         if ($merubahIndexCF[$i] === $hasilMax) {
-          echo "Nilai tertinggi dari perhitungan gejala adalah ".$namaPenyakit.", dengan nilai CF = ".$merubahIndexCF[$i];  
+          echo "Nilai tertinggi dari perhitungan gejala adalah <b>".$namaPenyakit."</b>, dengan nilai CF = <b>".$merubahIndexCF[$i]."</b>";  
         }
       }
 

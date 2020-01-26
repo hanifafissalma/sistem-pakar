@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2020 at 07:01 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jan 26, 2020 at 05:16 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,105 +29,67 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `gejala` (
-  `kd_gejala` varchar(10) NOT NULL,
-  `gejala` text NOT NULL
+  `id_gejala` int(12) NOT NULL,
+  `gejala` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `gejala`
 --
 
-INSERT INTO `gejala` (`kd_gejala`, `gejala`) VALUES
-('G01', 'Kopling Keras'),
-('G02', 'Kopling bunyi'),
-('G03', 'Tidak bisa starter'),
-('G04', 'Pengisian kurang'),
-('G05', 'Mesin pincang'),
-('G06', 'Brebet');
+INSERT INTO `gejala` (`id_gejala`, `gejala`) VALUES
+(1, 'Kopling Keras'),
+(2, 'Kopling bunyi'),
+(3, 'Tidak bisa starter'),
+(4, 'Pengisian kurang'),
+(5, 'Mesin pincang'),
+(6, 'Brebet');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log`
+-- Table structure for table `konsultasi`
 --
 
-CREATE TABLE `log` (
-  `id` int(11) NOT NULL,
-  `nama_penyakit` varchar(100) NOT NULL,
-  `bobot` float NOT NULL,
-  `waktu` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+CREATE TABLE `konsultasi` (
+  `kode_konsultasi` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL,
+  `penyakit` varchar(100) NOT NULL,
+  `cf` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `log`
---
-
-INSERT INTO `log` (`id`, `nama_penyakit`, `bobot`, `waktu`) VALUES
-(2, 'Kurang pengisian', 0.15, '2020-01-19 23:55:36'),
-(3, 'Kurang pengisian', 0.15, '2020-01-19 23:58:04'),
-(4, 'Kurang pengisian', 0.25, '2020-01-19 23:58:04'),
-(5, 'Mesin pincang', 0.1, '2020-01-19 23:58:04'),
-(6, '', 0, '2020-01-19 23:58:04'),
-(7, '', 0, '2020-01-19 23:58:04'),
-(8, '', 0, '2020-01-19 23:58:04'),
-(9, 'Kopling Rusak', 0.225, '2020-01-20 00:00:50'),
-(10, 'Kurang pengisian', 0.25, '2020-01-20 00:00:50'),
-(11, 'Mesin pincang', 0.3, '2020-01-20 00:00:50');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pakar`
+-- Table structure for table `pengetahuan`
 --
 
-CREATE TABLE `pakar` (
-  `kode_pakar` int(11) NOT NULL,
-  `kd_gejala` varchar(10) NOT NULL,
-  `kode` varchar(50) NOT NULL,
-  `bobot` float NOT NULL
+CREATE TABLE `pengetahuan` (
+  `id_pengetahuan` int(11) NOT NULL,
+  `kode_penyakit` varchar(10) NOT NULL,
+  `id_gejala` int(12) NOT NULL,
+  `mb` float NOT NULL,
+  `md` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pakar`
+-- Dumping data for table `pengetahuan`
 --
 
-INSERT INTO `pakar` (`kode_pakar`, `kd_gejala`, `kode`, `bobot`) VALUES
-(2, 'G01', 'P01', 0.275),
-(3, 'G02', 'P01', 0.225),
-(4, 'G03', 'P02', 0.15),
-(5, 'G04', 'P02', 0.25),
-(6, 'G05', 'P03', 0.1),
-(7, 'G06', 'P03', 0.3);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pencegahan`
---
-
-CREATE TABLE `pencegahan` (
-  `kd_pencegahan` varchar(10) NOT NULL,
-  `kode` varchar(10) NOT NULL,
-  `deskripsi` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pencegahan`
---
-
-INSERT INTO `pencegahan` (`kd_pencegahan`, `kode`, `deskripsi`) VALUES
-('PP01', 'P01', 'Diperiksa secara berkala'),
-('PP02', 'P02', 'Cek arus Alternator'),
-('PP03', 'P09', 'Sistem rem'),
-('PP04', 'P04', 'Sistem starter'),
-('PP05', 'P05', 'Sistem kemudi'),
-('PP06', 'P06', 'Sistem kemudi'),
-('PP07', 'P11', 'Sistem AC'),
-('PP08', 'P12', 'Sistem pendingin mesin'),
-('PP09', 'P10', 'Sistem rem'),
-('PP10', 'P07', 'Sistem kemudi'),
-('PP11', 'P08', 'Sistem suspensi'),
-('PP12', 'P03', 'Sistem pengapian');
+INSERT INTO `pengetahuan` (`id_pengetahuan`, `kode_penyakit`, `id_gejala`, `mb`, `md`) VALUES
+(2, 'A', 2, 0.6, 0.1),
+(3, 'A', 3, 0.5, 0.2),
+(4, 'A', 4, 0.9, 0.2),
+(5, 'A', 5, 0.4, 0.3),
+(6, 'A', 6, 0.8, 0.5),
+(7, 'B', 1, 0.4, 0.2),
+(9, 'B', 2, 0.7, 0.3),
+(10, 'A', 1, 0.8, 0.2),
+(11, 'B', 3, 0.7, 0.3),
+(12, 'B', 4, 0.9, 0.2),
+(13, 'B', 5, 0.8, 0.4),
+(14, 'B', 6, 0.3, 0.1);
 
 -- --------------------------------------------------------
 
@@ -136,81 +98,29 @@ INSERT INTO `pencegahan` (`kd_pencegahan`, `kode`, `deskripsi`) VALUES
 --
 
 CREATE TABLE `penyakit` (
-  `kode` varchar(50) NOT NULL,
-  `nama_penyakit` varchar(50) NOT NULL,
-  `penyebab` varchar(50) NOT NULL,
-  `bobot` varchar(70) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id_penyakit` int(12) NOT NULL,
+  `kode_penyakit` varchar(100) NOT NULL,
+  `nama_penyakit` varchar(100) NOT NULL,
+  `saran` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `penyakit`
 --
 
-INSERT INTO `penyakit` (`kode`, `nama_penyakit`, `penyebab`, `bobot`) VALUES
-('P01', 'Kopling Rusak', 'Penggunaan Kopling yang tidak benar', '0.5'),
-('P02', 'Kurang pengisian', 'Alternator rusak', '0.4'),
-('P03', 'Mesin pincang', 'Busi Mati atau Igniter mati', '0.4'),
-('P04', 'Sistem starter', 'Hubungan kabel dari Baterai ke starter terputus', '0.24'),
-('P05', 'Steer Miring', 'Posisi ban depan kanan dan kiri tidak seimbang ', '0.22'),
-('P06', 'Steer getar', 'Terdapat benda asing yang menancap di bagian luar ', '0.18'),
-('P07', 'Kemudi terasa goyang', 'Kaki-kaki sudah mulai lemah', '0.26'),
-('P08', 'Suspensi limbung', 'Sistem suspensi mulai lemah', '0.16'),
-('P09', 'Minyak rem kurang', 'Terjadi kebocoran pada sistem pengereman', '0.2'),
-('P10', 'Rem dalam', 'Setelan rem tangan tinggi', '0.23'),
-('P11', 'AC tidak dingin', 'Motor Van AC mati', '0.16'),
-('P12', 'Temperatur mesin naik', 'Terjadi kebocoran pada sisitem pendingin mesin', '0.18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rule`
---
-
-CREATE TABLE `rule` (
-  `jika` varchar(50) NOT NULL,
-  `maka` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `rule`
---
-
-INSERT INTO `rule` (`jika`, `maka`) VALUES
-('G01ANDG02', 'P01'),
-('G03ANDG04', 'P02'),
-('G05ANDG06', 'P03');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `solusi`
---
-
-CREATE TABLE `solusi` (
-  `id` int(10) NOT NULL,
-  `kd_solusi` varchar(10) NOT NULL,
-  `kd_pencegahan` varchar(10) NOT NULL,
-  `solusi` text NOT NULL,
-  `kode` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `solusi`
---
-
-INSERT INTO `solusi` (`id`, `kd_solusi`, `kd_pencegahan`, `solusi`, `kode`) VALUES
-(1, 'S01', 'PP01', 'Ganti Kopling', 'P01'),
-(2, 'S02', 'PP02', 'Ganti Alternator', 'P02'),
-(3, 'S03', 'PP03', 'Periksa komponen selang dan wheele cylinder pada sistem rem', 'P09'),
-(4, 'S04', 'PP04', 'Periksa kabel dan dinamo starter', 'P04'),
-(5, 'S05', 'PP05', 'Spooring', 'P05'),
-(6, 'S06', 'PP06', 'Spooring', 'P06'),
-(7, 'S07', 'PP07', 'Ganti motor van dan periksa pipa persambungan AC', 'P11'),
-(8, 'S08', 'PP08', 'Periksa Oli mesin dan selang persambungan sistem pendingin mesin', 'P12'),
-(9, 'S09', 'PP09', 'Setel rem tangan', 'P10'),
-(10, 'S10', 'PP10', 'Periksa komponen BallJoint dan Bearing roda', 'P07'),
-(11, 'S11', 'PP11', 'Periksa baut baut suspensi dan Absorber pada suspensi', 'P08'),
-(12, 'S12', 'PP12', 'periksa busi dan igniter pada sistem pengapian', 'P03');
+INSERT INTO `penyakit` (`id_penyakit`, `kode_penyakit`, `nama_penyakit`, `saran`) VALUES
+(1, 'A', 'Kopling Rusak', NULL),
+(2, 'B', 'Kurang pengisian', NULL),
+(3, 'C', 'Mesin pincang', NULL),
+(4, 'D', 'Sistem starter', NULL),
+(5, 'E', 'Steer Miring', NULL),
+(6, 'F', 'Steer getar', NULL),
+(7, 'G', 'Kemudi terasa goyang', NULL),
+(8, 'H', 'Suspensi limbung', NULL),
+(9, 'I', 'Minyak rem kurang', NULL),
+(10, 'J', 'Rem dalam', NULL),
+(11, 'K', 'AC tidak dingin', NULL),
+(12, 'L', 'Temperatur mesin naik', NULL);
 
 -- --------------------------------------------------------
 
@@ -231,7 +141,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `fullname`, `level`) VALUES
-(3, 'admin', 'admin', 'adminsikar', '-- Pilih L');
+(3, 'admin', 'admin123', 'admin admin', 'admin'),
+(5, 'hani', 'hani', 'hani', 'konsultan');
 
 --
 -- Indexes for dumped tables
@@ -241,71 +152,66 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `fullname`, `level`) VALU
 -- Indexes for table `gejala`
 --
 ALTER TABLE `gejala`
-  ADD PRIMARY KEY (`kd_gejala`);
+  ADD PRIMARY KEY (`id_gejala`);
 
 --
--- Indexes for table `log`
+-- Indexes for table `konsultasi`
 --
-ALTER TABLE `log`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `konsultasi`
+  ADD PRIMARY KEY (`kode_konsultasi`);
 
 --
--- Indexes for table `pakar`
+-- Indexes for table `pengetahuan`
 --
-ALTER TABLE `pakar`
-  ADD PRIMARY KEY (`kode_pakar`);
+ALTER TABLE `pengetahuan`
+  ADD PRIMARY KEY (`id_pengetahuan`);
 
 --
--- Indexes for table `pencegahan`
+-- Indexes for table `penyakit`
 --
-ALTER TABLE `pencegahan`
-  ADD PRIMARY KEY (`kd_pencegahan`);
-
---
--- Indexes for table `rule`
---
-ALTER TABLE `rule`
-  ADD PRIMARY KEY (`jika`);
-
---
--- Indexes for table `solusi`
---
-ALTER TABLE `solusi`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `penyakit`
+  ADD PRIMARY KEY (`id_penyakit`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `log`
+-- AUTO_INCREMENT for table `gejala`
 --
-ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `gejala`
+  MODIFY `id_gejala` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `pakar`
+-- AUTO_INCREMENT for table `konsultasi`
 --
-ALTER TABLE `pakar`
-  MODIFY `kode_pakar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `konsultasi`
+  MODIFY `kode_konsultasi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `solusi`
+-- AUTO_INCREMENT for table `pengetahuan`
 --
-ALTER TABLE `solusi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `pengetahuan`
+  MODIFY `id_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `penyakit`
+--
+ALTER TABLE `penyakit`
+  MODIFY `id_penyakit` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

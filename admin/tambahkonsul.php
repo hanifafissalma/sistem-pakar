@@ -27,7 +27,7 @@
               <div class="card" style="padding:20px">
                 <h3>KONSULTASI</h3>
                 <hr/>
-                <form action="hasilkonsul.php" method="POST">
+                <form action="hasil.php" method="POST">
                     <div class="form-group">
                         <label>Nama Konsultan</label>
                         <input type="text" name="nama" class="form-control" />
