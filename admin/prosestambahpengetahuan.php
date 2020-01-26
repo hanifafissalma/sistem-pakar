@@ -2,13 +2,13 @@
 include '../conn.php';
  
 // menangkap data yang di kirim dari form
-$kd_gejala = $_POST['kd_gejala'];
-$kode = $_POST['kode'];
+$id_gejala = $_POST['id_gejala'];
+$kode_penyakit = $_POST['kode_penyakit'];
 $mb =  $_POST['mb'];
 $md = $_POST['md'];
 
 // menginput data ke database
-mysqli_query($koneksi,"insert into pengetahuan values('','$kd_gejala','$kode','$mb','$md')");
+mysqli_query($koneksi,"insert into pengetahuan values('','$id_gejala','$kode_penyakit','$mb','$md')");
  
 // mengalihkan halaman kembali ke index.php
 header("location:pengetahuan.php");

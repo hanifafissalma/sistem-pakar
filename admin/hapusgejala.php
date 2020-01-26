@@ -7,7 +7,7 @@ $id = $_GET['id'];
  
  
 // menghapus data dari database
-mysqli_query($koneksi,"delete from gejala where kd_gejala='$id'");
+mysqli_query($koneksi,"delete from gejala where id_gejala='$id'");
  
 // mengalihkan halaman kembali ke index.php
 header("location:gejala.php");

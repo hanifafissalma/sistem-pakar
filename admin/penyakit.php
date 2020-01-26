@@ -23,15 +23,11 @@
                 <form action="prosestambahpenyakit.php" method="POST">
                   <div class="form-group">
                       <label>Kode</label>
-                      <input type="text" name="kode" class="form-control" />
+                      <input type="text" name="kode_penyakit" class="form-control" />
                   </div>
                   <div class="form-group">
                       <label>Nama Penyakit</label>
                       <input type="text" name="nama_penyakit" class="form-control" />
-                  </div>
-                  <div class="form-group">
-                      <label>Informasi</label>
-                      <textarea name="informasi" class="form-control"></textarea>
                   </div>
                   <div class="form-group">
                       <label>Saran</label>
@@ -51,7 +47,6 @@
                         <th width="20"><center>NO</center></th>
                         <th width="100"><center>KODE</center></th>
                         <th><center>NAMA PENYAKIT</center></th>
-                        <th><center>INFORMASI</center></th>
                         <th><center>SARAN</center></th>
                         <th><center>AKSI</center></th>
                       </tr>
@@ -59,20 +54,19 @@
                     <tbody>   
                       <?php 
                         include "../conn.php";
-                        $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY kode ASC");
+                        $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY id_penyakit ASC");
                         $no=0;
                         while ($data=mysqli_fetch_array($query)) {
                             $no++;
                       ?>
                       <tr>
                           <td><?php echo $no; ?></td>
-                          <td><?php echo $data['kode']; ?></td>
+                          <td><?php echo $data['kode_penyakit']; ?></td>
                           <td><?php echo $data['nama_penyakit']; ?></td>
-                          <td><?php echo $data['informasi']; ?></td>
                           <td><?php echo $data['saran']; ?></td>
                           <td>
-                              <a  href="editpenyakit.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-warning">UBAH</a>
-                              <a  href="hapuspenyakit.php?id=<?php echo $data['kode']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
+                              <a  href="editpenyakit.php?id=<?php echo $data['id_penyakit']; ?>" class="btn btn-sm btn-warning">UBAH</a>
+                              <a  href="hapuspenyakit.php?id=<?php echo $data['id_penyakit']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
                           </td>
                       </tr>  
                       <?php } ?>

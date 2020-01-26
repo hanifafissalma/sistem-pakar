@@ -38,7 +38,7 @@
                       <?php
                         foreach ($arrayName as $r){
                       ?>
-                        <input id="gejala<?php echo $r['kd_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['kd_gejala']; ?>">
+                        <input id="gejala<?php echo $r['id_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['id_gejala']; ?>">
                         <?php echo $r['gejala']; ?><br/>
                       <?php
                         }

@@ -22,23 +22,20 @@
                 <?php
                     include '../conn.php';
                     $kode = $_GET['id'];
-                    $data = mysqli_query($koneksi,"select * from penyakit where kode='$kode'");
+                    $data = mysqli_query($koneksi,"select * from penyakit where id_penyakit='$kode'");
                     while($d = mysqli_fetch_array($data)){
                 ?>
                 <form action="updatepenyakit.php" method="POST">
                     <div class="form-group">
                         <label>Kode</label>
                         <br/>
-                        <b><?php echo $d['kode']?></b>
-                        <input type="hidden" name="kode" class="form-control" value="<?php echo $d['kode']; ?>" />
+                        <b><?php echo $d['kode_penyakit']?></b>
+                        <input type="hidden" name="id_penyakit" class="form-control" value="<?php echo $d['id_penyakit']; ?>" />
+                        <input type="hidden" name="kode_penyakit" class="form-control" value="<?php echo $d['kode_penyakit']; ?>" />
                     </div>
                     <div class="form-group">
                         <label>Nama Gejala</label>
                         <input type="text" name="nama_penyakit" class="form-control" value="<?php echo $d['nama_penyakit']; ?>" />
-                    </div>
-                    <div class="form-group">
-                        <label>Informasi</label>
-                        <textarea name="informasi" class="form-control"><?php echo $d['informasi']?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Saran</label>

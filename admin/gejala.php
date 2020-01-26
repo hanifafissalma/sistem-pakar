@@ -20,10 +20,6 @@
             <hr/>
             <form action="prosestambahgejala.php" method="POST">
                 <div class="form-group">
-                    <label>Kode Gejala</label>
-                    <input type="text" name="kd_gejala" class="form-control" />
-                </div>
-                <div class="form-group">
                     <label>Nama Gejala</label>
                     <input type="text" name="gejala" class="form-control" />
                 </div>
@@ -47,7 +43,7 @@
                     <tbody>   
                     <?php 
                         include "../conn.php";
-                        $query = mysqli_query($koneksi,"SELECT * FROM gejala ORDER BY kd_gejala ASC");
+                        $query = mysqli_query($koneksi,"SELECT * FROM gejala ORDER BY id_gejala ASC");
                         $no=0;
                         while ($data=mysqli_fetch_array($query)) {
                             $a = $data['gejala'];
@@ -55,11 +51,11 @@
                         ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
-                                <td><?php echo $data['kd_gejala']; ?></td>
+                                <td><?php echo $data['id_gejala']; ?></td>
                                 <td><?php echo $data['gejala']; ?></td>
                                 <td>
-                                    <a  href="editgejala.php?id=<?php echo $data['kd_gejala']; ?>" class="btn btn-sm btn-warning">UBAH</a>
-                                    <a  href="hapusgejala.php?id=<?php echo $data['kd_gejala']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
+                                    <a  href="editgejala.php?id=<?php echo $data['id_gejala']; ?>" class="btn btn-sm btn-warning">UBAH</a>
+                                    <a  href="hapusgejala.php?id=<?php echo $data['id_gejala']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
                                 </td>
                             </tr>  
                         <?php } ?>

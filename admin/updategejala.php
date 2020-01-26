@@ -3,9 +3,9 @@
 include '../conn.php';
  
 // menangkap data yang di kirim dari form
-$kd_gejala = $_POST['kd_gejala'];
+$id_gejala = $_POST['id_gejala'];
 $gejala = $_POST['gejala'];
-$newsql = "UPDATE gejala SET gejala = '$gejala' WHERE kd_gejala = '$kd_gejala'" ;
+$newsql = "UPDATE gejala SET gejala = '$gejala' WHERE id_gejala = '$id_gejala'" ;
 // update data ke database
 mysqli_query($koneksi,$newsql);
  

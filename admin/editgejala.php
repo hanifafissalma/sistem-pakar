@@ -21,16 +21,16 @@
                 <hr/>
                 <?php
                     include '../conn.php';
-                    $kd_gejala = $_GET['id'];
-                    $data = mysqli_query($koneksi,"select * from gejala where kd_gejala='$kd_gejala'");
+                    $id_gejala = $_GET['id'];
+                    $data = mysqli_query($koneksi,"select * from gejala where id_gejala='$id_gejala'");
                     while($d = mysqli_fetch_array($data)){
                 ?>
                 <form action="updategejala.php" method="POST">
                     <div class="form-group">
                         <label>Kode Gejala</label>
                         <br/>
-                        <b><?php echo $d['kd_gejala']?></b>
-                        <input type="hidden" name="kd_gejala" class="form-control" value="<?php echo $d['kd_gejala']; ?>" />
+                        <b><?php echo $d['id_gejala']?></b>
+                        <input type="hidden" name="id_gejala" class="form-control" value="<?php echo $d['id_gejala']; ?>" />
                     </div>
                     <div class="form-group">
                         <label>Nama Gejala</label>

@@ -23,16 +23,16 @@
                 <form action="prosestambahpengetahuan.php" method="POST">
                     <div class="form-group">
                         <label>Gejala</label>
-                        <select name="kd_gejala" class="form-control">
+                        <select name="id_gejala" class="form-control">
                           <option>-- Pilih Gejala --</option>
                             <?php 
                                 include "../conn.php";
-                                $query = mysqli_query($koneksi,"SELECT * FROM gejala ORDER BY kd_gejala ASC");
+                                $query = mysqli_query($koneksi,"SELECT * FROM gejala ORDER BY id_gejala ASC");
                                 $no=0;
                                 while ($data=mysqli_fetch_array($query)) {
                                 $no++;
                             ?>  
-                            <option value="<?php echo $data['kd_gejala'];?>"> <?php echo $data['kd_gejala'];?> - <?php echo $data['gejala']; ?></option>
+                            <option value="<?php echo $data['id_gejala'];?>"> <?php echo $data['id_gejala'];?> - <?php echo $data['gejala']; ?></option>
                             <?php 
                                 }
                             ?>
@@ -40,17 +40,17 @@
                     </div>
                     <div class="form-group">
                         <label>Penyakit</label>
-                        <select name="kode" class="form-control">
+                        <select name="kode_penyakit" class="form-control">
                           <option>-- Pilih Penyakit --</option>
                             <?php 
                                 include "../conn.php";
-                                $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY kode ASC");
+                                $query = mysqli_query($koneksi,"SELECT * FROM penyakit ORDER BY id_penyakit ASC");
                                 $no=0;
                                 while ($data=mysqli_fetch_array($query)) {
                                 $a = $data['nama_penyakit'];
                                 $no++;
                             ?>  
-                            <option value="<?php echo $data['kode'];?>"> <?php echo $data['kode'];?> - <?php echo $data['nama_penyakit']; ?></option>
+                            <option value="<?php echo $data['kode_penyakit'];?>"> <?php echo $data['kode_penyakit'];?> - <?php echo $data['nama_penyakit']; ?></option>
                             <?php 
                                 }
                             ?>
@@ -86,19 +86,19 @@
                     <tbody>   
                       <?php 
                         include "../conn.php";
-                        $query = mysqli_query($koneksi,"SELECT * FROM pengetahuan ORDER BY kode_pengetahuan ASC");
+                        $query = mysqli_query($koneksi,"SELECT * FROM pengetahuan ORDER BY id_pengetahuan ASC");
                         $no=0;
                         while ($data=mysqli_fetch_array($query)) {
                             $no++;
                       ?>
                       <tr>
                           <td><?php echo $no; ?></td>
-                          <td><?php echo $data['kd_gejala']; ?></td>
-                          <td><?php echo $data['kode']; ?></td>
+                          <td><?php echo $data['id_gejala']; ?></td>
+                          <td><?php echo $data['kode_penyakit']; ?></td>
                           <td><?php echo $data['mb']; ?></td>
                           <td><?php echo $data['md']; ?></td>
                           <td>
-                              <a  href="hapuspengetahuan.php?id=<?php echo $data['kode_pengetahuan']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
+                              <a  href="hapuspengetahuan.php?id=<?php echo $data['id_pengetahuan']; ?>" class="btn btn-sm btn-danger">HAPUS</a>
                           </td>
                       </tr>  
                       <?php } ?>
