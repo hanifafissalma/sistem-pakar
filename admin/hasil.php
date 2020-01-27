@@ -35,7 +35,7 @@
                                     <tr>
                                         <td>Tanggal Konsultasi</td>
                                         <td>:</td>
-                                        <td><?php echo date("Y-m-d H:i:s")?></td>
+                                        <td><?php echo date("Y-m-d")?></td>
                                     </tr> 
                                     <tr>
                                         <td>Jumlah Gejala</td>
@@ -165,3 +165,11 @@
     </section>
   </body>
 </html>
+<?php
+    include '../conn.php';
+    $nama = $_POST['nama'];
+    $tanggal = date("Y-m-d");
+    $hasil_akhir = $_SESSION['hasil_penyakit'];
+    $cf_akhir=  $_SESSION['hasil_cf'];
+    mysqli_query($koneksi,"insert into konsultasi values('','$nama','$tanggal','$hasil_akhir','$cf_akhir')");
+?>
