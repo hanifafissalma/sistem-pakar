@@ -1,5 +1,5 @@
 <?php
-    include 'Crud.php';
+    include './admin/Crud.php';
     $crud = new Crud();
  ?>
 <!doctype html>
@@ -11,9 +11,9 @@
     <meta name="author" content="SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL">
     <link rel="icon" href="">
     <title>ADMIN SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet"/>
   </head>
   <body>
     <?php include "header.php"; ?>
@@ -166,7 +166,7 @@
   </body>
 </html>
 <?php
-    include '../conn.php';
+    include 'conn.php';
     $nama = $_POST['nama'];
     $tanggal = date("Y-m-d");
     $hasil_akhir = $_SESSION['hasil_penyakit'];

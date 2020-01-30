@@ -1,6 +1,6 @@
 <?php
 	// untuk memanggil file
-	include 'Crud.php';
+	include './admin/Crud.php';
 	// untuk mendeklarasikan class menjadi variabel
 	$crud = new Crud();
 	$arrayName = $crud->readGejala();
@@ -14,9 +14,9 @@
     <meta name="author" content="SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL">
     <link rel="icon" href="">
     <title>ADMIN SISTEM PAKAR DIAGNOSA KERUSAKAN PADA MOBIL</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet"/>
   </head>
   <body>
     <?php include "header.php"; ?>

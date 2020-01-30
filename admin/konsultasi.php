@@ -17,9 +17,6 @@
       <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <br/>
-              <a class="btn btn-info btn-lg" href="tambahkonsul.php">TAMBAH KONSULTASI</a>
-              <br/><br/>
               <h3>Daftar Hasil Konsultasi</h3>
               <br/>
               <div class="row">

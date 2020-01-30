@@ -15,27 +15,15 @@
         <li class="nav-item dropdown">
           <a class="nav-link" href="penyakit.php">Penyakit</a>
         </li>
-        <?php
-          if($_SESSION['level'] == 'admin'){ 
-        ?>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="pengetahuan.php">Basis Pengetahuan</a>
-          </li>
-        <?php
-          }
-        ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="pengetahuan.php">Basis Pengetahuan</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="konsultasi.php">Daftar Konsultasi</a>
         </li>
-        <?php
-          if($_SESSION['level'] == 'admin'){ 
-        ?>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="pengguna.php">Daftar Pengguna</a>
-          </li>
-        <?php
-          }
-        ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="pengguna.php">Daftar Pengguna</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="ubah.php">Ubah Password</a>
         </li>
