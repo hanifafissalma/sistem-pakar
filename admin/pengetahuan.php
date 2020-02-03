@@ -57,6 +57,23 @@
                             </select>
                     </div>
                     <div class="form-group">
+                        <label>Jenis Mobil</label>
+                        <select name="id_jenis_mobil" class="form-control">
+                          <option>-- Pilih Jenis Mobil --</option>
+                            <?php 
+                                include "../conn.php";
+                                $query = mysqli_query($koneksi,"SELECT * FROM ref_jenis_mobil ORDER BY id_jenis_mobil ASC");
+                                $no=0;
+                                while ($data=mysqli_fetch_array($query)) {
+                                $no++;
+                            ?>  
+                            <option value="<?php echo $data['id_jenis_mobil'];?>"> <?php echo $data['id_jenis_mobil'];?> - <?php echo $data['nama_mobil']; ?></option>
+                            <?php 
+                                }
+                            ?>
+                            </select>
+                    </div>
+                    <div class="form-group">
                         <label>Nilai Kepercayaan (MB)</label>
                         <input type="number" step="0.01" name="mb" class="form-control" />
                     </div>
@@ -78,6 +95,7 @@
                         <th><center>NO</center></th>
                         <th><center>GEJALA</center></th>
                         <th><center>PENYAKIT</center></th>
+                        <th><center>JENIS MOBIL</center></th>
                         <th><center>MB</center></th>
                         <th><center>MD</center></th>
                         <th><center>AKSI</center></th>
@@ -95,6 +113,7 @@
                           <td><?php echo $no; ?></td>
                           <td><?php echo $data['id_gejala']; ?></td>
                           <td><?php echo $data['kode_penyakit']; ?></td>
+                          <td><?php echo $data['id_jenis_mobil']; ?></td>
                           <td><?php echo $data['mb']; ?></td>
                           <td><?php echo $data['md']; ?></td>
                           <td>

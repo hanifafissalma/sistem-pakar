@@ -152,7 +152,7 @@
           $merubahIndexCF = max($daftar_cf[$namaPenyakit]);
         }
 
-        echo "Nilai CF Tertinggi Di Kandidat Penyakit = ".$merubahIndexCF."<br>";
+        echo "Nilai CF Tertinggi Di Kandidat Penyakit = ".($merubahIndexCF*100)."<br>";
         echo "<br/>======================================<br/>";
       }
     }
@@ -169,9 +169,9 @@
         $hasilMax = max($merubahIndexCF);
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
         if ($merubahIndexCF[$i] === $hasilMax) {
-          echo "Nilai tertinggi dari perhitungan gejala adalah <b>".$namaPenyakit."</b>, dengan nilai CF = <b>".$merubahIndexCF[$i]."</b>"; 
+          echo "Nilai tertinggi dari perhitungan gejala adalah <b>".$namaPenyakit."</b>, dengan nilai CF = <b>".($merubahIndexCF[$i]*100)."</b>"; 
           $_SESSION['hasil_penyakit'] = $namaPenyakit;
-          $_SESSION['hasil_cf'] =  $merubahIndexCF[$i];
+          $_SESSION['hasil_cf'] =  ($merubahIndexCF[$i]*100);
         }
       }
     }

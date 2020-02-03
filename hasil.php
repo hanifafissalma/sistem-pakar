@@ -132,7 +132,7 @@
                                                                         $mb = $mbsementara;
                                                                         $md = $mdsementara;
                                                                         $cf = $mb - $md;
-                                                                        echo "cf = mblama - mdlama = ".$mb." - ".$md." = ".$cf."<br/><br/><br/>";
+                                                                        echo "cf = mblama - mdlama = (".$mb." - ".$md.") x 100 = ".($cf*100)."<br/><br/><br/>";
                                                                         $daftar_cf[$namaPenyakit][] = $cf;;
                                                                     }
                                                                     // end list kemungkinanan lebih dari satu
@@ -169,7 +169,9 @@
     include 'conn.php';
     $nama = $_POST['nama'];
     $tanggal = date("Y-m-d");
+    $mobil = $_POST['id_jenis_mobil'];
+    $plat = $_POST['plat'];
     $hasil_akhir = $_SESSION['hasil_penyakit'];
     $cf_akhir=  $_SESSION['hasil_cf'];
-    mysqli_query($koneksi,"insert into konsultasi values('','$nama','$tanggal','$hasil_akhir','$cf_akhir')");
+    mysqli_query($koneksi,"insert into konsultasi values('','$nama','$tanggal','$mobil','$plat','$hasil_akhir','$cf_akhir')");
 ?>

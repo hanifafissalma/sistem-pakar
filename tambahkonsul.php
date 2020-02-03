@@ -33,12 +33,33 @@
                         <input type="text" name="nama" class="form-control" />
                     </div>
                     <div class="form-group">
+                      <label>Jenis Mobil</label>
+                      <select name="id_jenis_mobil" class="form-control">
+                        <option>-- Pilih Jenis Mobil --</option>
+                          <?php 
+                              include "conn.php";
+                              $query = mysqli_query($koneksi,"SELECT * FROM ref_jenis_mobil ORDER BY id_jenis_mobil ASC");
+                              $no=0;
+                              while ($data=mysqli_fetch_array($query)) {
+                              $no++;
+                          ?>  
+                          <option value="<?php echo $data['nama_mobil'];?>"> <?php echo $data['id_jenis_mobil'];?> - <?php echo $data['nama_mobil']; ?></option>
+                          <?php 
+                              }
+                          ?>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Plat Nomor</label>
+                        <input type="text" name="plat" class="form-control" />
+                    </div>
+                    <div class="form-group">
                       <label>Pilih Gejala</label>
                       <br/>
                       <?php
                         foreach ($arrayName as $r){
                       ?>
-                        <input id="gejala<?php echo $r['id_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['id_gejala']; ?>">
+                        <input class="single-checkbox" id="gejala<?php echo $r['id_gejala']; ?>" name="gejala[]" type="checkbox" value="<?php echo $r['id_gejala']; ?>">
                         <?php echo $r['gejala']; ?><br/>
                       <?php
                         }
@@ -53,3 +74,12 @@
     </section>
   </body>
 </html>
+<script src="js/jquery.js"></script>
+<script>
+  var limit = 2;
+  $('input.single-checkbox').on('change', function(evt) {
+    if($(this).siblings(':checked').length >= limit) {
+        this.checked = false;
+    }
+  });
+</script>
