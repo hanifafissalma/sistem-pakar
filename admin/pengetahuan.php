@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label>Perkiraan Biaya Service</label>
-                        <input type="number" name="biaya" class="form-control" />
+                        <input type="text" name="biaya" class="form-control autonumber-price-idr" />
                     </div>
                     <div class="form-group">
                         <label>Nilai Kepercayaan (MB)</label>
@@ -141,9 +141,17 @@
     <script src="../js/jquery-slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/autoNumeric.js"></script>
     <script>
         $(document).ready(function() {
             $('#gejala').DataTable();
+
+            $('.autonumber-price-idr').autoNumeric('init', {
+              aSep: '.',
+              aDec: ',',
+              mDec: '0',
+              aSign: 'Rp',
+            });
         } );
     </script>
   </body>
