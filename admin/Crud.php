@@ -122,8 +122,7 @@
 
     }
 
-    public function getListPenyakit($value)
-    {
+    public function getListPenyakit($value){
       // p, g , pyt merupakan inisialisasi dari tabel yang dituju
       $sql = "SELECT * FROM pengetahuan p
         JOIN gejala g ON p.id_gejala = g.id_gejala
@@ -143,11 +142,10 @@
       }
     }
 
-    public function hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit)
-    {
+    public function hasilCFTertinggi($daftar_cf,$groupKemungkinanPenyakit){
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
-        echo "<br/>Nama Penyakit = ".$namaPenyakit."<br/>";
+        echo "Nama Penyakit = ".$namaPenyakit."<br/>";
         for ($x=0; $x < count($daftar_cf[$namaPenyakit]); $x++) {
           $merubahIndexCF = max($daftar_cf[$namaPenyakit]);
         }
@@ -156,8 +154,7 @@
         echo "<br/>======================================<br/>";
       }
     }
-    public function hasilAkhir($daftar_cf,$groupKemungkinanPenyakit)
-    {
+    public function hasilAkhir($daftar_cf,$groupKemungkinanPenyakit){
       for ($i=0; $i < count($groupKemungkinanPenyakit); $i++) { 
         $namaPenyakit = $groupKemungkinanPenyakit[$i]['nama_penyakit'];
         for ($x=0; $x < count($daftar_cf[$namaPenyakit]); $x++) {

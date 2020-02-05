@@ -27,7 +27,8 @@
                         <th><center>NO</center></th>
                         <th><center>NAMA</center></th>
                         <th><center>TANGGAL</center></th>
-                        <th><center>PENYAKIT</center></th>
+                        <th><center>JENIS MOBIL</center></th>
+                        <th><center>KERUSAKAN</center></th>
                         <th><center>CF</center></th>
                         <th><center>AKSI</center></th>
                       </tr>
@@ -44,6 +45,7 @@
                           <td><?php echo $no; ?></td>
                           <td><?php echo $data['nama']; ?></td>
                           <td><?php echo $data['tanggal']; ?></td>
+                          <td><?php echo $data['jenis_mobil']; ?></td>
                           <td><?php echo $data['penyakit']; ?></td>
                           <td><?php echo $data['cf']; ?></td>
                           <td>

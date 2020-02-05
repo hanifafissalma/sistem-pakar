@@ -74,6 +74,10 @@
                             </select>
                     </div>
                     <div class="form-group">
+                        <label>Perkiraan Biaya Service</label>
+                        <input type="number" name="biaya" class="form-control" />
+                    </div>
+                    <div class="form-group">
                         <label>Nilai Kepercayaan (MB)</label>
                         <input type="number" step="0.01" name="mb" class="form-control" />
                     </div>
@@ -104,16 +108,20 @@
                     <tbody>   
                       <?php 
                         include "../conn.php";
-                        $query = mysqli_query($koneksi,"SELECT * FROM pengetahuan ORDER BY id_pengetahuan ASC");
+                        $query = mysqli_query($koneksi,"SELECT * FROM pengetahuan p
+                                          JOIN gejala g ON p.id_gejala = g.id_gejala
+                                          JOIN penyakit pyt ON p.kode_penyakit = pyt.kode_penyakit
+                                          JOIN ref_jenis_mobil rjm ON p.id_jenis_mobil = rjm.id_jenis_mobil
+                                          ORDER BY id_pengetahuan ASC");
                         $no=0;
                         while ($data=mysqli_fetch_array($query)) {
                             $no++;
                       ?>
                       <tr>
                           <td><?php echo $no; ?></td>
-                          <td><?php echo $data['id_gejala']; ?></td>
-                          <td><?php echo $data['kode_penyakit']; ?></td>
-                          <td><?php echo $data['id_jenis_mobil']; ?></td>
+                          <td><?php echo $data['gejala']; ?></td>
+                          <td><?php echo $data['nama_penyakit']; ?></td>
+                          <td><?php echo $data['nama_mobil']; ?></td>
                           <td><?php echo $data['mb']; ?></td>
                           <td><?php echo $data['md']; ?></td>
                           <td>

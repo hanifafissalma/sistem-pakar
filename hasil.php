@@ -155,6 +155,33 @@
                                             ?>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>Saran</td>
+                                        <td>:</td>
+                                        <td>
+                                            <?php 
+                                                include "conn.php";
+                                                $hasil_akhir = $_SESSION['hasil_penyakit'];
+                                                $query = mysqli_query($koneksi,"SELECT * FROM penyakit pyt
+                                                                JOIN pengetahuan p ON pyt.kode_penyakit = p.kode_penyakit
+                                                                WHERE pyt.nama_penyakit LIKE  %$hasil_akhir%");
+                                                $no=0;
+                                                while ($data=mysqli_fetch_array($query)) {
+                                                    $no++;
+                                            ?>
+                                            <?php echo $data['saran']; ?>
+                                            <?php
+                                                }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perkiraan Biaya Service</td>
+                                        <td>:</td>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -169,7 +196,7 @@
     include 'conn.php';
     $nama = $_POST['nama'];
     $tanggal = date("Y-m-d");
-    $mobil = $_POST['id_jenis_mobil'];
+    $mobil = $_POST['nama_mobil'];
     $plat = $_POST['plat'];
     $hasil_akhir = $_SESSION['hasil_penyakit'];
     $cf_akhir=  $_SESSION['hasil_cf'];

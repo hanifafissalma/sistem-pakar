@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                       <label>Jenis Mobil</label>
-                      <select name="id_jenis_mobil" class="form-control">
+                      <select name="nama_mobil" class="form-control">
                         <option>-- Pilih Jenis Mobil --</option>
                           <?php 
                               include "conn.php";
