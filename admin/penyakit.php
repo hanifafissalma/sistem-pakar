@@ -33,6 +33,10 @@
                       <label>Saran</label>
                       <textarea name="saran" class="form-control"></textarea>
                   </div>
+                  <div class="form-group">
+                      <label>Perkiraan Biaya Service</label>
+                      <input type="number" name="biaya" class="form-control" />
+                  </div>
                   <button type="submit" class="btn btn-md btn-danger">Tambah</button>
                 </form>
               </div>
@@ -48,6 +52,7 @@
                         <th width="100"><center>KODE</center></th>
                         <th><center>NAMA PENYAKIT</center></th>
                         <th><center>SARAN</center></th>
+                        <th><center>PERKIRAAN BIAYA SERVICE</center></th>
                         <th><center>AKSI</center></th>
                       </tr>
                     </thead> 
@@ -64,6 +69,7 @@
                           <td><?php echo $data['kode_penyakit']; ?></td>
                           <td><?php echo $data['nama_penyakit']; ?></td>
                           <td><?php echo $data['saran']; ?></td>
+                          <td>Rp<?php echo $data['biaya_service']; ?></td>
                           <td>
                               <a  href="editpenyakit.php?id=<?php echo $data['id_penyakit']; ?>" class="btn btn-sm btn-warning">UBAH</a>
                               <a  href="hapuspenyakit.php?id=<?php echo $data['id_penyakit']; ?>" class="btn btn-sm btn-danger">HAPUS</a>

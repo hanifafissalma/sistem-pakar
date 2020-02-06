@@ -74,10 +74,6 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label>Perkiraan Biaya Service</label>
-                        <input type="text" name="biaya" class="form-control autonumber-price-idr" />
-                    </div>
-                    <div class="form-group">
                         <label>Nilai Kepercayaan (MB)</label>
                         <input type="number" step="0.01" name="mb" class="form-control" />
                     </div>

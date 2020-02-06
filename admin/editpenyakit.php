@@ -41,6 +41,10 @@
                         <label>Saran</label>
                         <textarea name="saran" class="form-control"><?php echo $d['saran']?></textarea>
                     </div>
+                    <div class="form-group">
+                      <label>Perkiraan Biaya Service</label>
+                      <input type="number" name="biaya" class="form-control" value="<?php echo $d['biaya_service']?>"/>
+                    </div>
                     <button type="submit" class="btn btn-md btn-danger">Ubah</button>
                 </form>
                 <?php 

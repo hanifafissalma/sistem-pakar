@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2020 at 05:46 PM
+-- Generation Time: Feb 06, 2020 at 01:44 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -61,28 +61,6 @@ CREATE TABLE `konsultasi` (
   `cf` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `konsultasi`
---
-
-INSERT INTO `konsultasi` (`kode_konsultasi`, `nama`, `tanggal`, `jenis_mobil`, `plat`, `penyakit`, `cf`) VALUES
-(5, 'Hanifa Fissalma', '2020-01-27', '', '', 'Kopling Rusak', 0.64),
-(6, 'Yusuf', '2020-01-27', '', '', 'Kopling Rusak', 0.64),
-(7, 'fulan bin fulan', '2020-01-27', '', '', 'Kopling Rusak', 0.59),
-(8, 'Gedung 1', '2020-01-27', '', '', 'Kopling Rusak', 0.64),
-(9, 'Hanifa Fissalma', '2020-01-27', '', '', 'Kopling Rusak', 0.6),
-(10, 'Hanifa Fissalma', '2020-01-30', '', '', 'Kopling Rusak', 0.64),
-(11, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(12, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(13, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(14, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(15, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(16, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(17, 'Hanifa Fissalma', '2020-02-03', '', '', 'Kopling Rusak', 64),
-(18, 'Hanifa Fissalma', '2020-02-03', '', 'B 3132 KRQ', 'Kopling Rusak', 64),
-(19, 'Hanifa Fissalma', '2020-02-03', '1', 'B 3132 KRQ', 'Kopling Rusak', 64),
-(20, 'Hanifa Fissalma', '2020-02-03', '1', 'B 3132 KRQ', 'Kopling Rusak', 64);
-
 -- --------------------------------------------------------
 
 --
@@ -94,7 +72,6 @@ CREATE TABLE `pengetahuan` (
   `kode_penyakit` varchar(10) NOT NULL,
   `id_gejala` int(12) NOT NULL,
   `id_jenis_mobil` int(11) NOT NULL,
-  `biaya_service` int(10) NOT NULL,
   `mb` float NOT NULL,
   `md` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -103,20 +80,11 @@ CREATE TABLE `pengetahuan` (
 -- Dumping data for table `pengetahuan`
 --
 
-INSERT INTO `pengetahuan` (`id_pengetahuan`, `kode_penyakit`, `id_gejala`, `id_jenis_mobil`, `biaya_service`, `mb`, `md`) VALUES
-(2, 'A', 2, 1, 0, 0.6, 0.1),
-(3, 'A', 3, 2, 0, 0.5, 0.2),
-(4, 'A', 4, 3, 0, 0.9, 0.2),
-(5, 'A', 5, 4, 0, 0.4, 0.3),
-(6, 'A', 6, 12, 0, 0.8, 0.5),
-(7, 'B', 1, 11, 0, 0.4, 0.2),
-(9, 'B', 2, 10, 0, 0.7, 0.3),
-(10, 'A', 1, 9, 0, 0.8, 0.2),
-(11, 'B', 3, 8, 0, 0.7, 0.3),
-(12, 'B', 4, 7, 0, 0.9, 0.2),
-(13, 'B', 5, 6, 0, 0.8, 0.4),
-(14, 'B', 6, 5, 0, 0.3, 0.1),
-(15, 'G', 5, 8, 0, 0.2, 0.1);
+INSERT INTO `pengetahuan` (`id_pengetahuan`, `kode_penyakit`, `id_gejala`, `id_jenis_mobil`, `mb`, `md`) VALUES
+(1, 'D', 1, 1, 0.5, 0.1),
+(2, 'B', 2, 2, 0.8, 0.2),
+(3, 'A', 3, 2, 0.8, 0.2),
+(4, 'A', 4, 2, 0.9, 0.1);
 
 -- --------------------------------------------------------
 
@@ -128,26 +96,27 @@ CREATE TABLE `penyakit` (
   `id_penyakit` int(12) NOT NULL,
   `kode_penyakit` varchar(100) NOT NULL,
   `nama_penyakit` varchar(100) NOT NULL,
-  `saran` varchar(255) DEFAULT NULL
+  `saran` text,
+  `biaya_service` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `penyakit`
 --
 
-INSERT INTO `penyakit` (`id_penyakit`, `kode_penyakit`, `nama_penyakit`, `saran`) VALUES
-(1, 'A', 'Kopling Rusak', NULL),
-(2, 'B', 'Kurang pengisian', NULL),
-(3, 'C', 'Mesin pincang', NULL),
-(4, 'D', 'Sistem starter', NULL),
-(5, 'E', 'Steer Miring', NULL),
-(6, 'F', 'Steer getar', NULL),
-(7, 'G', 'Kemudi terasa goyang', NULL),
-(8, 'H', 'Suspensi limbung', NULL),
-(9, 'I', 'Minyak rem kurang', NULL),
-(10, 'J', 'Rem dalam', NULL),
-(11, 'K', 'AC tidak dingin', NULL),
-(12, 'L', 'Temperatur mesin naik', NULL);
+INSERT INTO `penyakit` (`id_penyakit`, `kode_penyakit`, `nama_penyakit`, `saran`, `biaya_service`) VALUES
+(1, 'A', 'Kopling Rusak', 'lalala', 120000),
+(2, 'B', 'Kurang pengisian', 'lilili', 200000),
+(3, 'C', 'Mesin pincang', 'lalayeyeye', 300000),
+(4, 'D', 'Sistem starter', 'yayayaya', 500000),
+(5, 'E', 'Steer Miring', 'yoyoyo', 150000),
+(6, 'F', 'Steer getar', 'yuyuyu', 600000),
+(7, 'G', 'Kemudi terasa goyang', 'yayaya', 250000),
+(8, 'H', 'Suspensi limbung', 'yeyeye', 300000),
+(9, 'I', 'Minyak rem kurang', 'lalalla', 300000),
+(10, 'J', 'Rem dalam', 'lelele', 700000),
+(11, 'K', 'AC tidak dingin', 'lololo', 250000),
+(12, 'L', 'Temperatur mesin naik', 'lululu', 200000);
 
 -- --------------------------------------------------------
 
@@ -258,13 +227,13 @@ ALTER TABLE `gejala`
 -- AUTO_INCREMENT for table `konsultasi`
 --
 ALTER TABLE `konsultasi`
-  MODIFY `kode_konsultasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `kode_konsultasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `pengetahuan`
 --
 ALTER TABLE `pengetahuan`
-  MODIFY `id_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `penyakit`

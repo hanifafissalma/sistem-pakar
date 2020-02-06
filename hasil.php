@@ -181,14 +181,13 @@
                                             <?php 
                                                 include "conn.php";
                                                 $hasil_akhir = $_SESSION['hasil_penyakit'];
-                                                $query = mysqli_query($koneksi,"SELECT * FROM pengetahuan p
-                                                                JOIN penyakit pyt ON pyt.kode_penyakit = p.kode_penyakit
-                                                                JOIN gejala g ON g.id_gejala = p.id_gejala
-                                                                JOIN ref_jenis_mobil rjm ON rjm.id_jenis_mobil = p.id_jenis_mobil
-                                                                WHERE pyt.nama_penyakit LIKE '%$hasil_akhir%'");
+                                                $query = mysqli_query($koneksi,"SELECT * FROM penyakit
+                                                                WHERE nama_penyakit LIKE '%$hasil_akhir%'");
+                                                $no=0;
+                                               
                                                 while ($data=mysqli_fetch_array($query)) {
                                             ?>
-                                            <?php echo $data['biaya_service']; ?>
+                                            Rp<?php echo $data['biaya_service']; ?>
                                             <?php
                                                 }
                                             ?>

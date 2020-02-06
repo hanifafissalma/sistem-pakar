@@ -1,7 +1,0 @@
-kode gejala di tabel jadi nama gejala dan nama penyakit di basis pengetahuan
-maksimum hanya 2 aja yg bisa diceklis
-basis pengetahuan ditambah jenis mobil nya apa
-saat isi konsultasi, ditambah jenis mobil dan plat nomor
-import data gejala
-tambah biaya perkiraan service di basis pengetahuan
-HASIL DIKALI 100

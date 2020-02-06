@@ -7,8 +7,9 @@ $id = $_POST['id_penyakit'];
 $kode = $_POST['kode_penyakit'];
 $nama_penyakit = $_POST['nama_penyakit'];
 $saran = $_POST['saran'];
+$biaya = $_POST['biaya'];
 // update data ke database
-$newsql = "UPDATE penyakit SET nama_penyakit = '$nama_penyakit', saran = '$saran'  WHERE id_penyakit = '$id'" ;
+$newsql = "UPDATE penyakit SET nama_penyakit = '$nama_penyakit', saran = '$saran', biaya_service = '$biaya'  WHERE id_penyakit = '$id'" ;
 
 mysqli_query($koneksi,$newsql);
  
